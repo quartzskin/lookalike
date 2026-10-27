@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>lookalike</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<h1>lookalike</h1>
+<p>Check a URL or domain for lookalike tricks. Nothing is fetched.</p>
+
+<form id="form" autocomplete="off">
+  <input type="text" id="input" size="48" spellcheck="false" placeholder="https://paypa1.com/login" aria-label="URL or domain">
+  <button type="submit">Check</button>
+  <label><input type="checkbox" id="html"> HTML snippet</label>
+  <label>QR image (PNG) <input type="file" id="qr" accept="image/png"></label>
+  <span id="status" role="status"></span>
+</form>
+
+<div id="result" hidden>
+  <p id="picker-row" hidden><label>Link <select id="picker"></select></label></p>
+  <p id="verdict"></p>
+
+  <h2>Findings</h2>
+  <table id="findings">
+    <thead><tr><th>Rule</th><th>Detail</th><th>Evidence</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Lookalike characters</h2>
+  <table id="chars">
+    <thead><tr><th>Position</th><th>Character</th><th>Codepoint</th><th>Unicode name</th><th>Imitates</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<p class="foot">Served from 127.0.0.1 only. Nothing leaves this machine.</p>
+<script src="/app.js"></script>
+</body>
+</html>
